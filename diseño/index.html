@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="imgfrente">
+    <img class="frente" src="../imágenes/bg-card-front.png" alt="">
+    </div>
+    <div class="imgatras">
+    <img class="atras" src="../imágenes/bg-card-back.png" alt="">
+    </div>
+    <div class="imglado">
+    <img class="lado" src="../imágenes/bg-main-desktop.png" alt="">
+    </div>
+    <form class="container">
+        <label for="cardholder">Cardholder Name</label>
+        <input type="text">
+        <label for="cardnumber">Card Number</label>
+        <input type="number">
+        <input type="error1">Wrong format, number only
+        <label for="expdatemm">Exp.Date (MM/YY)</label>
+        <input type="number">
+        <input type="error2">Can't be blank
+        <label for="expdateyy"></label>
+        <input type="number">
+        <div class="cvc">
+            <label for="CVC">CVC</label>
+            <input 
+                class="cvc"    
+                type="text"
+                name="cvc"
+                id="cvc"
+                required
+                placeholder="ex 123"
+                maxlength="3"
+                minlength="3"
+                pattern="[0-9]{3}">
+            <span class="invalid">Can't be blank</span>
+        </div>
+        <button> Confirm </button>
+    </form>
+    
+</body>
+</html>

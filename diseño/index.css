@@ -1,0 +1,36 @@
+*{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    color: grey;
+    background-image: url(./interactive-card-form/images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 30% 100vh;
+    font-size: 18px
+}
+
+.container {
+    position: absolute;
+    left: 450px;
+    display: flex;
+    flex-direction: column;
+}
+.frente {
+    position: relative;
+    top: 200px;
+    left: 200px;
+}
+.atras {
+    position: relative;
+    top: 400px;
+    left: 300px;
+}
+.lado {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
