@@ -1,1 +1,11 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+@media (max-width: 375px) {
+    body {
+        font-size: 14px;
+    }
+}

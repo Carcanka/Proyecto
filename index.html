@@ -6,26 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprint</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
 </head>
-<body class="flex h-screen w-screen bg-no-repeat bg-contain justify-center items-center bg-[url(./img/bg-main-desktop.png)] justify-evenly">
-        <div class="w-[500px] h-[500px]">
-          <div class="flex [&>img]:p-5">
-            <img src="./img/bg-card-front.png" alt="card-front"> 
-            <img class="flex absolute mt-10 ml-10" src="./img/card-logo.svg" alt="logo">
-            <span class="text-white text-4xl fixed mt-[130px] mx-[30px]">9591 6489 6389 101E</span>
-            <span class="text-white text-2xl font-thin  fixed mt-[190px] mx-[30px]">Felicia Leire</span>
-            <span class="text-white text-2xl font-thin fixed mt-[190px] ml-[350px]">09/00</span>
+<body class="flex md:flex-row flex-col h-screen w-screen bg-no-repeat bg-contain items-center md:bg-[url(./img/bg-main-desktop.png)] justify-evenly bg-[url(./img/bg-main-mobile.png)]">
+        <div class="md:w-[500px] md:h-[500px]">
+          <div class="flex md:static absolute top-[140px] left-[10px]">
+          <img class="z-10 w-4/5" src="./img/bg-card-front.png" alt="card-front">
+            <div class="grid md:w-[395px] md:h-[215px] grid-cols-4 grid-rows-4 w-4/5 h-[100%]
+             absolute z-30">
+              <img class="col-span-4 row-span-2 m-5" src="./img/card-logo.svg" alt="logo">
+              <span class="text-white ml-5 col-span-4 text-2xl md:text-4xl">9591 6489 6389 101E</span>
+              <span class="text-white col-span-3 md:first-letter:text-2xl ml-5 font-thin">Felicia Leire</span>
+              <span class="text-white col-span-1 md:text-2xl font-thin">09/00</span>
+          </div>
         </div>
-        <div class="flex ml-20">
-          <img src="./img/bg-card-back.png" alt="card-back">
-          <span class="text-white text-2xl font-thin fixed mt-[35px] ml-[350px]">000</span>
+        <div class="flex md:static md:ml-20 md:bottom-[230px] md:left-[155px] absolute top-[50px] left-[70px] right-[20px]">
+          <img class="md:p-5" src="./img/bg-card-back.png" alt="card-back">
+          <span class="text-white z-10 md:text-2xl font-thin md:fixed  md:left-[580px] md:top-[515px] absolute top-[62px] right-[40px]">000</span>
         </div>
       </div>
-      <form class="container-form w-[90%] md:w-[22%] grid grid-rows-7 grid-cols-4 [&>input]:border [&>input]:h-10 [&>input]:w-[100%] [&>input]:rounded-lg gap-3 [&>input]:justify-center [&>input]:items-center [&>input]:border-black">
+      <form class="container-form md:w-[25%] w-[70%] grid grid-rows-7 grid-cols-4 [&>input]:border [&>input]:h-10 [&>input]:w-[100%] [&>input]:rounded-lg gap-3 [&>input]:justify-center [&>input]:items-center [&>input]:border-black">
             <label class="col-span-4" for="cardholder-name">CARDHOLDER NAME:</label>
             <input class="col-span-4" type="text" id="cardholder-name" name="cardholder-name" required>        
             <label class="col-span-4" for="card-number">CARD NUMBER:</label>
