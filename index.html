@@ -1,71 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sprint</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./src/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">   
-</head>
-<body class="flex md:flex-row flex-col h-screen w-screen bg-no-repeat bg-contain items-center md:bg-[url(./img/bg-main-desktop.png)] justify-evenly bg-[url(./img/bg-main-mobile.png)]">
-        <div class="md:w-[500px] md:h-[500px]">
-          <div class="flex md:static absolute top-[140px] left-[10px]">
-          <img class="z-10 w-4/5" src="./img/bg-card-front.png" alt="card-front">
-            <div class="grid md:w-[395px] md:h-[215px] grid-cols-4 grid-rows-4 w-4/5 h-[100%]
-             absolute z-30">
-              <img class="col-span-4 row-span-2 m-5" src="./img/card-logo.svg" alt="logo">
-              <span id="displayNumero" class="text-white ml-5 col-span-4 text-2xl md:text-4xl"></span>
-              <span id="displayNombre" class="text-white col-span-3 md:first-letter:text-2xl ml-5 font-thin"></span>
-              <span id="displayFecha" class="text-white col-span-1 md:text-2xl font-thin"></span>
-          </div>
-        </div>
-        <div class="flex md:static md:ml-20 md:bottom-[230px] md:left-[155px] absolute top-[50px] left-[70px] right-[20px]">
-          <img class="md:p-5" src="./img/bg-card-back.png" alt="card-back">
-          <div id="displayCvc" class="text-white z-10 md:text-2xl font-thin md:fixed  md:left-[580px] md:top-[515px] absolute top-[62px] right-[40px]"></div>
+    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="flex md:flex-row flex-col h-screen w-screen bg-no-repeat bg-contain items-center md:bg-[url(./img/bg-main-desktop.png)] justify-evenly bg-[url(./img/bg-main-mobile.png)]"
+  >
+    <div class="md:w-[500px] md:h-[500px]">
+      <div class="flex md:static absolute top-[140px] left-[10px]">
+        <img
+          class="z-10 w-4/5"
+          src="./img/bg-card-front.png"
+          alt="card-front"
+        />
+        <div
+          class="grid md:w-[395px] md:h-[215px] grid-cols-4 grid-rows-4 w-4/5 h-[100%] absolute z-30"
+        >
+          <img
+            class="col-span-4 row-span-2 m-5"
+            src="./img/card-logo.svg"
+            alt="logo"
+          />
+          <span
+            id="displayNumero"
+            class="text-white ml-5 col-span-4 text-2xl md:text-4xl"
+          ></span>
+          <span
+            id="displayNombre"
+            class="text-white col-span-3 md:first-letter:text-2xl ml-5 font-thin"
+          ></span>
+          <span
+            id="displayFecha"
+            class="text-white col-span-1 md:text-2xl font-thin"
+          ></span>
         </div>
       </div>
-      <form class="container-form md:w-[25%] w-[70%] grid grid-rows-7 grid-cols-4 [&>input]:border [&>input]:h-10 [&>input]:w-[100%] [&>input]:rounded-lg gap-3 [&>input]:justify-center [&>input]:items-center [&>input]:border-black">
-            <label class="col-span-4" for="cardholder-name">CARDHOLDER NAME:</label>
-            <input class="col-span-4" type="text" id="cardholder-name" name="cardholder-name" required placeholder="e.g. Jane Appleseed">        
-            <label class="col-span-4" for="card-number">CARD NUMBER:</label>
-            <input class="col-span-4" type="text" id="card-number" name="card-number" required placeholder="e.g. 1234 5678 9123 0000"
-            minlength="16"
-            maxlength="16"                
-            pattern="[0-9]{16}">
-            <span id="error-message-num" class="hidden text-sm text-red-600"></span>        
-            <label class="col-span-1" for="expiration-date">EXP. DATE</label>
-            <label class="col-span-1" for="date">(MM/YY):</label>
-            <label class="col-span-2" for="cvc">CVC:</label>  
-            <input class="col-span-1" type="text" id="expiration-month" name="expiration-month" required placeholder="MM"
-            minlength="2"
-            maxlength="2"
-            pattern="[01-12]{2}">
-            <div id="error-message-mm" class="hidden text-sm text-red-600"></div> 
-            <input class="col-span-1" type="text" id="expiration-year" name="expiration-year" required placeholder="YY"
-            minlength="2"
-            maxlength="2"                
-            pattern="[0-9]{2}">    
-            <input class="col-span-2" type="text"  id="cvc" name="cvc" required placeholder="e.g. 123"
-            minlength="3"
-            maxlength="3"                
-            pattern="[0-9]{3}">
-            <div id="error-message-cvc" class="hidden text-sm text-red-600"></div>
-            <div id= "ventana" class="hidden">
-              <div class="flex flex-col justify-center items-center p-3.5 gap-5" >
-                  <img src="../img/icon-complete.svg" alt="complete-logo">
-                  <h1 class="font-medium text-3xl">THANK YOU!</h1>
-                  <span class="text-gray-500"> We've added your card details </span>
-              </div>
-              <div class="flex justify-center items-center p-5">
-                  <button class="col-span-4 bg-violet-950 rounded-lg text-white p-2" type="submit" maxlength="" value="Confirm">Continue</button>
-              </div>
-          </div>
-            <button id="confirm" class="col-span-4 bg-violet-950 rounded-lg text-white p-2" type="submit" maxlength="" value="Confirm">Confirm</button>
-        </form>
-        <script src="java.js"></script>
-</body>
+      <div
+        class="flex md:static md:ml-20 md:bottom-[230px] md:left-[155px] absolute top-[50px] left-[70px] right-[20px]"
+      >
+        <img class="md:p-5" src="./img/bg-card-back.png" alt="card-back" />
+        <div
+          id="displayCvc"
+          class="text-white z-50 md:text-2xl font-thin md:relative relative top-[67px] md:top-[105px] right-[60px] md:right-[120px]"
+        ></div>
+      </div>
+    </div>
+    <form
+      class="container-form md:w-[25%] w-[70%] grid grid-rows-7 grid-cols-4 [&>input]:border [&>input]:h-10 [&>input]:w-[100%] [&>input]:rounded-lg gap-3 [&>input]:justify-center [&>input]:items-center [&>input]:border-black"
+    >
+      <label class="col-span-4" for="cardholder-name">CARDHOLDER NAME:</label>
+      <input
+        class="col-span-4"
+        type="text"
+        id="cardholder-name"
+        name="cardholder-name"
+        required
+        placeholder="e.g. Jane Appleseed"
+      />
+      <label class="col-span-4" for="card-number">CARD NUMBER:</label>
+      <input
+        class="col-span-4"
+        type="text"
+        id="card-number"
+        name="card-number"
+        required
+        placeholder="e.g. 1234 5678 9123 0000"
+      />
+      <span id="error-message-num" class="hidden text-sm text-red-600"></span>
+      <label class="col-span-1" for="expiration-date">EXP. DATE</label>
+      <label class="col-span-1" for="date">(MM/YY):</label>
+      <label class="col-span-2" for="cvc">CVC:</label>
+      <input
+        class="col-span-1"
+        type="text"
+        id="expiration-month"
+        name="expiration-month"
+        required
+        placeholder="MM"
+        minlength="2"
+        maxlength="2"
+        pattern="[01-12]{2}"
+      />
+      <span id="error-message-mm" class="hidden text-sm text-red-600"></span>
+      <input
+        class="col-span-1"
+        type="text"
+        id="expiration-year"
+        name="expiration-year"
+        required
+        placeholder="YY"
+        minlength="2"
+        maxlength="2"
+        pattern="[0-9]{2}"
+      />
+      <input
+        class="col-span-2"
+        type="text"
+        id="cvc"
+        name="cvc"
+        required
+        placeholder="e.g. 123"
+        minlength="3"
+        maxlength="3"
+        pattern="[0-9]{3}"
+      />
+      <span id="error-message-cvc" class="hidden text-sm text-red-600"></span>
+      <div id="ventana" class="hidden">
+        <div class="flex flex-col justify-center items-center p-3.5 gap-5">
+          <img src="../img/icon-complete.svg" alt="complete-logo" />
+          <h1 class="font-medium text-3xl">THANK YOU!</h1>
+          <span class="text-gray-500"> We've added your card details </span>
+        </div>
+        <div class="flex justify-center items-center p-5">
+          <button
+            class="col-span-4 bg-violet-950 rounded-lg text-white p-2"
+            type="submit"
+            maxlength=""
+            value="Confirm"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+      <button
+        id="confirm"
+        class="col-span-4 bg-violet-950 rounded-lg text-white p-2"
+        type="submit"
+        maxlength=""
+        value="Confirm"
+      >
+        Confirm
+      </button>
+    </form>
+    <script src="java.js"></script>
+  </body>
 </html>
